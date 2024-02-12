@@ -2,7 +2,7 @@
 // @name        Furaffinity-Match-List
 // @namespace   Violentmonkey Scripts
 // @grant       none
-// @version     1.0.1
+// @version     1.0.2
 // @author      Midori Dragon
 // @description Helper Script to create a matchlist for your Furaffinity Script
 // @icon        https://www.furaffinity.net/themes/beta/img/banners/fa_logo.png?v2
@@ -28,7 +28,7 @@
         }
 
         hasMatch() {
-            if (this.runInIFrame == false && window.parent !== window)
+            if (this.runInIFrame == false && this.isWindowIFrame() == true)
                 return false;
 
             if (!this.matches.some(x => window.location.toString().includes(x)))
@@ -59,6 +59,10 @@
                 return;
 
             return this.matches.find(x => window.location.toString().includes(x));
+        }
+
+        isWindowIFrame() {
+            return window !== window.parent;
         }
     }
     window.MatchList = MatchList;
