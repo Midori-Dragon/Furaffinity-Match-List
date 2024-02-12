@@ -46,3 +46,4 @@ It has following functions:
 - `removeMatch()` - Removes the last match from the list
 - `hasMatch()` - Checks if the list contains a match
 - `getMatch()` - Returns a Match if there is one
+- `isWindowIFrame()` - Checks if the current Window is running in an IFrame
